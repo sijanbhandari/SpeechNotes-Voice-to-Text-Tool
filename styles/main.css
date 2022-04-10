@@ -1,0 +1,118 @@
+body {
+    background-color: grey;
+}
+
+#loader {
+    position:relative;
+    margin:0 auto;
+    clear:left;
+    height:auto;
+    z-index: 0;
+    text-align:center;
+}
+
+.glow {
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+  
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #660073, 0 0 20px #660073, 0 0 25px #660073, 0 0 30px #060073, 0 0 35px #060073;
+    }
+    
+    to {
+      text-shadow: 0 0 10px #fff, 0 0 15px #0f4da6, 0 0 20px #0f4da6, 0 0 25px #0f4da6, 0 0 30px #0f4da6, 0 0 35px #0f4da6, 0 0 40px #0f4da6;
+    }
+}
+
+#linear {
+    display: flex;
+    color: black;
+    margin-left: 220px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
+    position:relative;
+    clear:left;
+    height:auto;
+    z-index: 0;
+    text-align:center;
+}
+
+.column1 {
+    float: left;
+    width: 40%;
+    height: 450px; 
+    background-color: #fff;
+}
+  
+.column2 {
+    float: left;
+    width: 60%;
+    height: 450px; 
+    background-color: #0f4da6;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.row:after {
+    
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+.row{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    background-color: #060073;
+}
+  
+@media screen and (max-width: 600px) {
+    .column1 {
+      width: 100%;
+    }
+}
+  
+@media screen and (max-width: 600px) {
+    .column2 {
+      width: 100%;
+    }
+}
+
+#stop,#start{
+    cursor: pointer;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 90%;
+    color: #fff;
+    border-radius: 25px;
+    background-color: #0f4da6;
+    margin-top: 10%;
+}
+
+#copy,#delete,#share,#italic,#underline,#bold,#settings,#downloads {
+    cursor: pointer;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 90%;
+    color: black;
+    border-radius: 25px;
+    margin-top: 10%;
+}
