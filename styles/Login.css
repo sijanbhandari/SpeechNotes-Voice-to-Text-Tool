@@ -47,7 +47,7 @@ body{
     border-color: #2ecc71;
 }
 
-.box input[type = "submit"]{
+.box a[role = "button"]{
     border: 0;
     outline: none;
     display: block;
@@ -56,7 +56,7 @@ body{
     text-align: center;
     border: 3px solid black;
     padding: 20px 60px;
-    width: 370px;
+    width: 250px;
     background: none;
     color: grey;
     border-radius: 22px;
@@ -64,8 +64,12 @@ body{
     cursor: pointer;
 }
 
-.box input[type = "submit"]:hover{
+.box a[role = "button"]:hover{
     background: black;
+}
+
+.box a:link, a:hover {
+    color: black;
 }
 
 .box button[type = "button"]{
