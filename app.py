@@ -8,8 +8,8 @@ app.secret_key = "KshitijBarnwal"
 def index():
     return render_template('login.html')
 
-@app.route('/main/')
-def audio_to_text():
+@app.route('/main')
+def main():
     flash(" Press Start to start recording audio and press Stop to end recording audio")
     return render_template('main.html')
 
