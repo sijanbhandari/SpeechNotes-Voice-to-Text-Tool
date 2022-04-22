@@ -10,7 +10,7 @@ def index():
 
 @app.route('/main')
 def main():
-    flash(" Press Start to start recording audio and press Stop to end recording audio")
+    flash("Press Start to start recording audio and press Stop to end recording audio")
     return render_template('main.html')
 
 @app.route('/audio', methods=['POST'])
