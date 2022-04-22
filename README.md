@@ -1,5 +1,5 @@
 # SpeechNotes Voice-to-Text Tool
 
-<img width="960" alt="2022-04-22" src="https://user-images.githubusercontent.com/73215352/164710526-cec9d032-31a1-476e-b01d-83e8e6c63f32.png">
+<img width="949" alt="2022-04-22" src="https://user-images.githubusercontent.com/73215352/164711085-945c7f2a-53ab-4438-8121-2df94a4a98e1.png">
 
-<img width="960" alt="2022-04-22 (1)" src="https://user-images.githubusercontent.com/73215352/164710653-5a97d789-b9f2-4a1f-a151-e484b0220821.png">
+<img width="947" alt="2022-04-22 (1)" src="https://user-images.githubusercontent.com/73215352/164711151-c30c5ae8-1d8d-40a1-ae4a-1ea879c6c339.png">
