@@ -1,12 +1,18 @@
 import speech_recognition as sr
-from flask import logging, Flask, render_template, request, flash
+from flask import logging, Flask, render_template, request, flash, redirect, url_for
 
 app = Flask(__name__)
 app.secret_key = "KshitijBarnwal"
 
-@app.route('/')
-def index():
-    return render_template('login.html')
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = 'Invalid Credentials. Please try again.'
+        else:
+            return redirect(url_for('main'))
+    return render_template('login.html', error=error)
 
 @app.route('/main')
 def main():

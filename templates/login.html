@@ -43,5 +43,8 @@
             </a>
         </button>
     </form>
+    {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
 </body>
 </html>
