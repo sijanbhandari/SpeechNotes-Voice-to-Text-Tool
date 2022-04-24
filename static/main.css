@@ -92,7 +92,7 @@ body {
     }
 }
 
-#stop,#start{
+#stopButton,#recordButton{
     cursor: pointer;
     padding-left: 10%;
     padding-right: 10%;
@@ -105,7 +105,7 @@ body {
     margin-top: 10%;
 }
 
-#copy,#delete,#share,#italic,#underline,#bold,#settings,#downloads {
+#copy,#delete,#share,#italic,#underline,#bold,#settings,#dwn-btn {
     cursor: pointer;
     padding-left: 10%;
     padding-right: 10%;

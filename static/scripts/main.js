@@ -12,10 +12,11 @@ var recIndex = 0;
 
 
 function gotBuffers(buffers) {
-    audioRecorder.exportMonoWAV(doneEncoding);
+    audioRecorder.exportWAV(doneEncoding);
 }
 
 function doneEncoding(soundBlob) {
+    console.log(soundBlob);
     // fetch('/audio', {method: "POST", body: soundBlob}).then(response => $('#output').text(response.text()))
     fetch('/audio', {method: "POST", body: soundBlob}).then(response => response.text().then(text => {
         document.getElementById('output').innerHTML =  text;
@@ -25,6 +26,8 @@ function doneEncoding(soundBlob) {
 
 function stopRecording() {
     // stop recording
+    console.log(audioRecorder);
+
     audioRecorder.stop();
     document.getElementById('stop').disabled = true;
     document.getElementById('start').removeAttribute('disabled');
@@ -116,13 +119,17 @@ function download(filename, text) {
 }
 
 // Start file download.
-document.getElementById("dwn-btn").addEventListener("click", function(){
-    // Generate download of hello.txt file with some content
-    var text = document.getElementById("text-val").value;
-    var filename = "hello.txt";
+setTimeout(() => {
     
-    download(filename, text);
-}, false);
+    document.getElementById("dwn-btn").addEventListener("click", function(){
+        // Generate download of hello.txt file with some content
+        var text = document.getElementById("text-val").value;
+        var filename = "hello.txt";
+        
+        download(filename, text);
+    }, false);    
+}, 1000);
+
 
 function convertToMono(input) {
     var splitter = audioContext.createChannelSplitter(2);
@@ -140,42 +147,42 @@ function cancelAnalyserUpdates() {
 }
 
 function updateAnalysers(time) {
-    if (!analyserContext) {
-        var canvas = document.getElementById("analyser");
-        canvasWidth = canvas.width;
-        canvasHeight = canvas.height;
-        analyserContext = canvas.getContext('2d');
-    }
+    // if (!analyserContext) {
+    //     var canvas = document.getElementById("analyser");
+    //     canvasWidth = canvas.width;
+    //     canvasHeight = canvas.height;
+    //     analyserContext = canvas.getContext('2d');
+    // }
+    
+    // // analyzer draw code here
+    // {
+    //     var SPACING = 3;
+    //     var BAR_WIDTH = 1;
+    //     var numBars = Math.round(canvasWidth / SPACING);
+    //     var freqByteData = new Uint8Array(analyserNode.frequencyBinCount);
 
-    // analyzer draw code here
-    {
-        var SPACING = 3;
-        var BAR_WIDTH = 1;
-        var numBars = Math.round(canvasWidth / SPACING);
-        var freqByteData = new Uint8Array(analyserNode.frequencyBinCount);
+    //     analyserNode.getByteFrequencyData(freqByteData);
 
-        analyserNode.getByteFrequencyData(freqByteData);
+    //     analyserContext.clearRect(0, 0, canvasWidth, canvasHeight);
+    //     analyserContext.fillStyle = '#F6D565';
+    //     analyserContext.lineCap = 'round';
+    //     var multiplier = analyserNode.frequencyBinCount / numBars;
 
-        analyserContext.clearRect(0, 0, canvasWidth, canvasHeight);
-        analyserContext.fillStyle = '#F6D565';
-        analyserContext.lineCap = 'round';
-        var multiplier = analyserNode.frequencyBinCount / numBars;
+    //     // Draw rectangle for each frequency bin.
+    //     for (var i = 0; i < numBars; ++i) {
+    //         var magnitude = 0;
+    //         var offset = Math.floor(i * multiplier);
+    //         // gotta sum/average the block, or we miss narrow-bandwidth spikes
+    //         for (var j = 0; j < multiplier; j++)
+    //             magnitude += freqByteData[offset + j];
+    //         magnitude = magnitude / multiplier;
+    //         var magnitude2 = freqByteData[i * multiplier];
+    //         analyserContext.fillStyle = "hsl( " + Math.round((i * 360) / numBars) + ", 100%, 50%)";
+    //         analyserContext.fillRect(i * SPACING, canvasHeight, BAR_WIDTH, -magnitude);
+    //     }
+    // }
 
-        // Draw rectangle for each frequency bin.
-        for (var i = 0; i < numBars; ++i) {
-            var magnitude = 0;
-            var offset = Math.floor(i * multiplier);
-            // gotta sum/average the block, or we miss narrow-bandwidth spikes
-            for (var j = 0; j < multiplier; j++)
-                magnitude += freqByteData[offset + j];
-            magnitude = magnitude / multiplier;
-            var magnitude2 = freqByteData[i * multiplier];
-            analyserContext.fillStyle = "hsl( " + Math.round((i * 360) / numBars) + ", 100%, 50%)";
-            analyserContext.fillRect(i * SPACING, canvasHeight, BAR_WIDTH, -magnitude);
-        }
-    }
-
-    rafID = window.requestAnimationFrame(updateAnalysers);
+    // rafID = window.requestAnimationFrame(updateAnalysers);
 }
 
 function toggleMono() {

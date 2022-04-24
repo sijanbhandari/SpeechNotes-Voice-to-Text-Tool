@@ -19,12 +19,20 @@ def main():
     flash("Press Start to start recording audio and press Stop to end recording audio")
     return render_template('main.html')
 
-@app.route('/audio', methods=['POST'])
+
+@app.route('/test')
+def test():
+    flash("Press Start to start recording audio and press Stop to end recording audio")
+    return render_template('test.html')
+
+
+@app.route('/audio', methods=['POST', 'GET'])
 def audio():
-    r = sr.Recognizer()
+    # return str(request.data)
     with open('upload/audio.wav', 'wb') as f:
         f.write(request.data)
   
+    r = sr.Recognizer()
     with sr.AudioFile('upload/audio.wav') as source:
         audio_data = r.record(source)
         text = r.recognize_google(audio_data, language='en-IN', show_all=True)
@@ -37,7 +45,6 @@ def audio():
             return_text = " Sorry!!!! Voice not Detected "
         
     return str(return_text)
-
 
 if __name__ == "__main__":
     app.run(debug=True)
