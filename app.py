@@ -20,12 +20,6 @@ def main():
     return render_template('main.html')
 
 
-@app.route('/test')
-def test():
-    flash("Press Start to start recording audio and press Stop to end recording audio")
-    return render_template('test.html')
-
-
 @app.route('/audio', methods=['POST', 'GET'])
 def audio():
     # return str(request.data)
