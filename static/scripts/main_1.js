@@ -185,3 +185,76 @@ function uploadTest(blob){
         document.getElementById('output').innerHTML =  text;
     }));
 }
+
+function copyToClipboard() {
+    
+    // Copying the text from the textarea to the clipboard
+    var copyText = document.getElementById("copy");
+  
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+  
+    navigator.clipboard.writeText(copyText.value);
+  
+    alert("Copied the text: " + copyText.value);
+}
+
+function clear()
+{
+    // Clearing the textarea
+    var delText = document.getElementById('delete');
+    delText.innerHTML = '';
+}
+
+function share() {
+
+    const shareData = {
+        title: 'SpeechNotes',
+        text: 'SpeechNotes Voice-to-Text Tool',
+        url: 'https://127.0.0.1:5000/'
+    }
+    
+    const btn = document.querySelector('button');
+    const resultPara = document.querySelector('.share');
+    
+    // Share must be triggered by "user activation"
+    btn.addEventListener('click', async () => {
+        try {
+          await navigator.share(shareData)
+          resultPara.textContent = 'Speechnotes Website shared successfully'
+        } catch(err) {
+          resultPara.textContent = 'Error: ' + err
+        }
+    });
+}
+
+function italic() {
+    // Italic text
+    var element = document.getElementById("italic");
+    element.style.fontStyle = "italic";
+}
+
+function underline() {
+    // Underline text
+    var element = document.getElementById("underline");
+    element.style.textDecoration = "underline";
+}
+
+function bold() {
+    //Bold text
+    var element = document.getElementById("bold");
+    element.style.fontWeight = "bold";
+}
+
+function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
