@@ -89,6 +89,18 @@ or
   python3 app.py
 ```
 
+## Tech Stack
+
+([Flask](https://github.com/pallets/flask) + [Heroku](https://www.heroku.com/) + [SpeechRecognition](https://pypi.org/project/SpeechRecognition/) + [Recorderjs](https://github.com/mattdiamond/Recorderjs))
+
+**Flask:** Flask is a microframework for Python based on Werkzeug, Jinja2 and good intentions. It is designed to get you started quickly but it is not the best way to build large applications. Flask is a good choice for small projects and is easy to extend.
+
+**SpeechRecognition:** SpeechRecognition is a library that allows you to convert speech to text. It is a Python library that uses the Google Speech Recognition API to convert speech to text. SpeechRecognition Library for performing speech recognition, with support for several engines and APIs, online and offline.
+
+**Heroku** : Heroku is a platform for deploying and scaling web apps. It is a cloud-based platform that allows you to deploy and scale your web apps easily. Heroku is a great way to get started with web development.
+
+**Recorderjs:** Recorderjs is a library that allows you to record audio from your browser. It is a JavaScript library that uses the Web Audio API to record audio from your browser. It is a great way to get started with web development.
+
 ## Screen Shots
 
 <img width="949" alt="2022-04-22" src="https://user-images.githubusercontent.com/73215352/164711085-945c7f2a-53ab-4438-8121-2df94a4a98e1.png">
@@ -96,3 +108,6 @@ or
 <img width="947" alt="2022-04-22 (1)" src="https://user-images.githubusercontent.com/73215352/164711151-c30c5ae8-1d8d-40a1-ae4a-1ea879c6c339.png">
 
 <img width="960" alt="2022-04-27 (2)" src="https://user-images.githubusercontent.com/73215352/165520208-ad26ddfe-7473-4b2b-a40a-fecd8afc50d2.png">
+
+### Flowchart
+<img width="163" alt="FlowChart" src="https://user-images.githubusercontent.com/73215352/165590186-12cc0fca-caa0-4473-98bf-1aa0656fbdd3.png">
