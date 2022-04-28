@@ -91,7 +91,7 @@ or
 
 ## Tech Stack
 
-([Flask](https://github.com/pallets/flask) + [Heroku](https://www.heroku.com/) + [SpeechRecognition](https://pypi.org/project/SpeechRecognition/) + [Recorderjs](https://github.com/mattdiamond/Recorderjs))
+## ([Flask](https://github.com/pallets/flask) + [Heroku](https://www.heroku.com/) + [SpeechRecognition](https://pypi.org/project/SpeechRecognition/) + [Recorderjs](https://github.com/mattdiamond/Recorderjs))
 
 **Flask:** Flask is a microframework for Python based on Werkzeug, Jinja2 and good intentions. It is designed to get you started quickly but it is not the best way to build large applications. Flask is a good choice for small projects and is easy to extend.
 
