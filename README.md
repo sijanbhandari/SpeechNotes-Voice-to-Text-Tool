@@ -61,6 +61,8 @@ Although backward compatibility is present in python , in case of any error duri
 
 ## Getting Started
 
+Drop a ⭐ on the Github Repository.
+
 Clone the project
 
 ```bash
